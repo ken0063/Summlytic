@@ -1,16 +1,16 @@
-import React from "react";
 import Hero from "./components/Hero";
 import Content from "./components/Content";
+import Nav from "./components/Nav";
+import { FC } from "react";
 
-type Props = {};
-
-const App = (props: Props) => {
+const App: FC = () => {
   return (
     <main>
-      <div>
-        <div className="bg-gradient-to-t from-gray-100 to-gray-900 " />
+      <div className="main">
+        <div className="gradient" />
       </div>
-      <div>
+      <div className="app">
+        <Nav />
         <Hero />
         <Content />
       </div>
