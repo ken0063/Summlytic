@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Schema } from "../types/article";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -17,9 +18,9 @@ export const articleApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    getSummary: builder.query({
-      query: (params) =>
-        `/summarize?url=${encodeURIComponent(params?.articleUrl)}&lenght=7`,
+    getSummary: builder.query<Schema, Pick<Schema, "url">>({
+      query: (params: Pick<Schema, "url">) =>
+        `/summarize?url=${encodeURIComponent(params?.url)}&lenght=7`,
     }),
   }),
 });

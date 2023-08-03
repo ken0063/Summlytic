@@ -10,7 +10,7 @@ import ApiError from "./ApiError";
 import SummaryResults from "./SummaryResults";
 import { Schema, schema } from "../types/article";
 
-const Content: FC<Schema> = () => {
+const Content: FC = () => {
   const {
     register,
     handleSubmit,
@@ -44,7 +44,7 @@ const Content: FC<Schema> = () => {
   }, []);
 
   const submitForm = async (data: Schema) => {
-    const { data: res } = await getSummary({ articleUrl: data?.url });
+    const { data: res } = await getSummary({ url: data?.url });
 
     if (res?.summary) {
       const newArticle = { ...article, summary: res?.summary, url: data?.url };
@@ -68,7 +68,7 @@ const Content: FC<Schema> = () => {
   };
 
   return (
-    <section className="mt-16 w-full max-w-xl ">
+    <section className="w-full max-w-xl mt-16 ">
       <div className="flex flex-col w-full gap-2">
         <UrlInput
           handleSubmit={handleSubmit}
@@ -85,7 +85,7 @@ const Content: FC<Schema> = () => {
         />
       </div>
 
-      <div className="my-10 max-w-full flex justify-center items-center">
+      <div className="flex items-center justify-center max-w-full my-10">
         {isFetching ? (
           <Loader />
         ) : error ? (
