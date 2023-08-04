@@ -11,7 +11,7 @@ const ApiError: FC<Props> = ({ error }) => {
     if (error) {
       if ("status" in error) {
         const errMsg =
-          "error" in error ? error.error : JSON.stringify(error.data);
+          "error" in error ? error.error : JSON.stringify(error?.data);
 
         return errMsg;
       } else {

@@ -2,15 +2,15 @@ import { FC } from "react";
 
 const Nav: FC = () => {
   return (
-    <header className="w-full items-center flex flex-col justify-center">
-      <nav className="flex justify-between items-center w-full mb-10 pt-3">
-        <div className="flex gap-2 items-center w-28 ">
+    <header className="flex flex-col items-center justify-center w-full">
+      <nav className="flex items-center justify-between w-full pt-3 mb-10">
+        <div className="flex items-center gap-2 w-28 ">
           <img
             src="/assets/logo.svg"
             alt="logo"
-            className="w-14 object-contain"
+            className="object-contain w-14 h-14"
           />
-          <p className="font-logo text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-black">
+          <p className="text-3xl font-extrabold text-transparent font-logo bg-clip-text bg-gradient-to-r from-green-400 to-black">
             Summlytic
           </p>
         </div>

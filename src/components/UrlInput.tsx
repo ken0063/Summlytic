@@ -23,10 +23,10 @@ const UrlInput: FC<Props> = ({
   return (
     <>
       <form
-        className="relative flex justify-center items-center"
+        className="relative flex items-center justify-center"
         onSubmit={handleSubmit(submitForm)}
       >
-        <Link2 className="text-gray-500 absolute left-0 w-5 my-2 ml-3" />
+        <Link2 className="absolute left-0 w-5 my-2 ml-3 text-gray-500" />
         <input
           placeholder="Paste the article link"
           type="url"
@@ -37,14 +37,15 @@ const UrlInput: FC<Props> = ({
 
         <button
           type="submit"
-          className="submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700 "
+          className="submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700"
+          aria-label="Enter"
         >
           <CornerDownLeft className="w-4 h-4" />
         </button>
       </form>
 
       {errors && (
-        <p className="text-red-500 text-sm ml-3">{errors?.url?.message}</p>
+        <p className="ml-3 text-sm text-red-500">{errors?.url?.message}</p>
       )}
     </>
   );
